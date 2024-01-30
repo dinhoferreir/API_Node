@@ -1,104 +1,30 @@
-PROGRAMAS NECESSÁRIO - NVM - JDK - YARN - NODEv18.16.0
-********** COMANDO NECESSÁRIOS PARA COMEÇAR UM PROJETO **********
-npm install expo-cli --global
-********** COMANDO NECESSÁRIOS PARA CRIAR UM PROJETO **********
-npx react-native init camAPP --version 0.70.0
-
-********** COMANDO PARA INSTALAÇÃO DE CAMERA **********
-npm install react-native-camera 
-https://react-native-camera.github.io/react-native-camera/docs/installation
+comandos iniciais -
+sugestao do canal Maransatto
+https://www.youtube.com/watch?v=hAAj27hgPFg
+os conteudos abaixo sem *** são comandos - cuidados com quebras de linhas
 
 
+npm init
+** preencha os dados...
+* nome - version e demais
 
+** instalação de express
+npm install --save express
 
-npx react-native init myPages --version 0.72.3
+** após preparo das paginas App.js com Server, foi possível rodar e testar com....
 
-********** COMANDO PARA INSTALAR FIREBASE **********
-npm install firebase@^8.8.1 --- não usar
-npm install firebase
-********** COMANDO PARA INSTALAR VECTOR-ICONS **********
-npm install react-native-vector-icons
-inserir dentro da pasta Andoid/app/build.gradle
-project.ext.vectoricons = [
-    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf', 'Feather.ttf', 'AntDesign.ttf', 'FontAwesome.ttf'  ] // Name of the font files you want to copy
-]
-apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle");
-********** COMANDO PARA INSTALAR SVG ********** 
-npm install react-native-svg
-https://www.npmjs.com/package/react-native-svg
-********** COMANDO PARA INSTALAR LINEAR GRADIENT ********** 
-npm install react-native-linear-gradient
-https://www.npmjs.com/package/react-native-linear-gradient
-********** COMANDO PARA INSTALAR NAVIGATION (INICIO) ********** 
-npm install @react-navigation/native
-npm install react-native-screens react-native-safe-area-context
-npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
-https://reactnavigation.org/docs/getting-started
-********** COMANDO PARA INSTALAR BOTTOM-TABS ********** 
-npm install @react-navigation/bottom-tabs
-https://reactnavigation.org/docs/bottom-tab-navigator
-********** COMANDO PARA INSTALAR DRAWER ********** 
-npm install @react-navigation/drawer
-https://reactnavigation.org/docs/drawer-navigator
-babel.config.js
-colar o plugin dentro da chave de (module.exports) 
- plugins: ['react-native-reanimated/plugin'],
-ficando
-module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
-  plugins: [
-    'react-native-reanimated/plugin',
-  ],
-};
-se apresentar o erro ( failed to create a worklet ) rodar o comando
-npm start -- --reset-cache
-********** COMANDO PARA INSTALAR STACK NAVIGATORS ********** 
-npm install @react-navigation/stack
-https://reactnavigation.org/docs/stack-navigator
-********** COMANDO PARA INSTALAR ASYNC STORAGE **********
-npm install @react-native-async-storage/async-storage
-********** COMANDO PARA INSTALAR PICKER-SELECT **********
-npm install react-native-picker-select - não funcionou
-npm install @react-native-picker/picker
-https://github.com/lawnstarter/react-native-picker-select
-********** COMANDO PARA INSTALAR DATE-FNS **********
-npm install date-fns
-********** COMANDO PARA INSTALAR DATA-TIME-PICKER CALENDARIO **********
-npm install @react-native-community/datetimepicker
-https://github.com/react-native-datetimepicker/datetimepicker#getting-started
+node server.js
 
-@react-native-picker/picker
-*****************  VERSÕES ANTERIORES A 16 *****************
-********** COMANDO PARA INSTALAR STYLED COMPONENTS **********
-npm install styled-components
-********** COMANDO PARA INSTALAR SLIDER ********** 
-npm i -S @react-native-assets/slider
-https://github.com/Sharcoux/slider
+** para que o serviço não precisa ser parado, pode ser instalado o Nodemon usando o seguinte comando
 
+npm install --save-dev nodemon
 
-191.254.114.63
-safe.serviceplus@gmail.com
-$4Muk400
-safeservice.ddns.net
+** para rodar pode digitar o comando abaixo ou configurar no pcktJson "start": "nodemom server.js"
 
+nodemom server.js
+** ou
+npm start
 
-npm install react-native@0.55.4 --save
-    "react-native-gesture-handler": "^2.12.0",
-    "react-native-reanimated": "^3.3.0"
-npx react-native init financas --version 0.70.0
+npm install --save morgan
 
-
-npx react-native run-android 
-
-npm install @react-navigation/native@^5.x
-
-
-
-
-
-******* erro ao instalar - não instalar  /******
-npm install --save react-native-gesture-handler
-
-
-npm install @react-navigation/drawer
-npm install react-native-gesture-handler react-native-reanimated
+npm install --save body-parser
