@@ -7,6 +7,8 @@ const rotaProdutos = require('./routes/produtos')
 const rotaPedidos = require('./routes/pedidos')
 
 app.use(morgan('dev'))
+// liberando a pasta uploads para ser acessível pelo caminha path
+app.use('/uploads', express.static('uploads'))
 app.use(bodyParser.urlencoded({extended: false}))// apenas dados simples
 app.use(bodyParser.json()); // apenas formato json de entrada no body
 
