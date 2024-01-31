@@ -3,14 +3,17 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
+
 // const productRoute = require('./routes/product-route');
 // const categoryRoute = require('./routes/category-route');
 // const orderRoute = require('./routes/order-route');
-// const userRoute = require('./routes/user-route');
+const userRoute = require('./routes/user-route');
 // const imageRoute  = require('./routes/image-route');
+const rotaUsuario = require('./routes/usuarios')
 const rotaProdutos = require('./routes/produtos');
 const rotaPedidos = require('./routes/pedidos');
-const rotaUsuarios = require('./routes/usuarios');
+
+
 
 app.use(morgan('dev'));
 app.use('/uploads', express.static('uploads'));
@@ -31,14 +34,15 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/produtos', rotaProdutos);
 // app.use('/products', productRoute);
-app.use('/pedidos', rotaPedidos);
 // app.use('/categories', categoryRoute);
-app.use('/usuarios', rotaUsuarios);
 // app.use('/orders', orderRoute);
-// app.use('/users', userRoute);
+app.use('/users', userRoute);
+app.use('/usuarios', rotaUsuario)
 // app.use('/images', imageRoute);
+app.use('/produtos', rotaProdutos);
+app.use('/pedidos', rotaPedidos);
+
 
 app.use((req, res, next) => {
     const erro = new Error('Não encontrado');
