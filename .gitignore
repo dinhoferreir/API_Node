@@ -3,3 +3,7 @@ nodemon.json
 .env
 config/
 uploads/*
+
+*.env
+*.sql
+*.gitgnore
