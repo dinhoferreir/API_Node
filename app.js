@@ -1,16 +1,26 @@
 const express = require('express');
-const app = express()
+const app = express();
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 
-const rotaProdutos = require('./routes/produtos')
-const rotaPedidos = require('./routes/pedidos')
+
+const rotaProdutos = require('./routes/produtos');
+const rotaPedidos = require('./routes/pedidos');
+// const rotaUsuarios = require('./routes/usuarios');
 
 app.use(morgan('dev'))
 // liberando a pasta uploads para ser acessível pelo caminha path
 app.use('/uploads', express.static('uploads'))
 app.use(bodyParser.urlencoded({extended: false}))// apenas dados simples
 app.use(bodyParser.json()); // apenas formato json de entrada no body
+
+app.use('/produtos', rotaProdutos);
+app.use('/pedidos', rotaPedidos);
+// app.use('/usuarios', require('./routes/usuarios'));
+app.use(()=>{
+
+})
+
 
 app.use((req, res, next)=>{
     res.header('Access-Control-Allow_Origin', '*')
@@ -24,8 +34,9 @@ app.use((req, res, next)=>{
     next();
 })
 
-app.use('/produtos', rotaProdutos)
-app.use('/pedidos', rotaPedidos)
+// app.use(router)
+// app.use('/nda')
+// app.use('/myus', rotaUsuarios);
 
 // Quando não encontra rota
 app.use((req, res, next)=>{
@@ -43,10 +54,5 @@ app.use((error, req, res, next) => {
     })
 })
 
-// app.use('/teste',(req, res, next) => {
-//     res.status(200).send({
-//         mensagem: 'Ok, Tudo pronto por aqui'
-//     });
-// });
 
 module.exports = app;
